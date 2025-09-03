@@ -19,37 +19,60 @@
   <meta name="twitter:image" content="https://iili.io/KqmTeRa.md.jpg">
 
   <style>
-    body {
+    /* Reset básico */
+    * {
+      box-sizing: border-box;
       margin: 0;
+      padding: 0;
+    }
+
+    body {
       font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+      background: radial-gradient(circle at top, #0d0d0d, #1a1a1a);
       color: #fff;
       text-align: center;
     }
+
     header {
       padding: 40px 20px;
       background: #111;
-      border-bottom: 2px solid gold;
+      border-bottom: 3px solid gold;
+      position: relative;
+      overflow: hidden;
     }
+
+    /* Logo con pulso */
     header img {
       max-width: 200px;
       margin-bottom: 20px;
       animation: pulse 2s infinite;
+      filter: drop-shadow(0 0 10px gold) drop-shadow(0 0 20px gold);
+      transition: transform 0.3s, filter 0.3s;
     }
+    header img:hover {
+      transform: scale(1.1);
+      filter: drop-shadow(0 0 20px #ffea00) drop-shadow(0 0 30px #ffea00);
+    }
+
+    /* Título con neón animado */
     header h1 {
-      font-size: 2.8em;
+      font-size: 3em;
       color: gold;
-      margin: 0;
-      text-shadow: 0 0 10px gold, 0 0 20px gold, 0 0 30px gold;
+      text-shadow: 0 0 10px gold, 0 0 20px gold, 0 0 30px gold, 0 0 40px gold;
       animation: neon 1.5s ease-in-out infinite alternate;
+      margin-bottom: 10px;
     }
+
     header p {
       font-size: 1.2em;
       color: #ccc;
+      text-shadow: 0 0 5px #fff;
     }
+
     .cta {
       margin: 40px 0;
     }
+
     .cta a {
       display: inline-block;
       padding: 15px 30px;
@@ -60,11 +83,14 @@
       border-radius: 8px;
       text-decoration: none;
       transition: 0.3s;
+      box-shadow: 0 0 5px gold, 0 0 10px gold, 0 0 15px gold;
     }
     .cta a:hover {
       background: #ffcc00;
-      transform: scale(1.05);
+      transform: scale(1.1);
+      box-shadow: 0 0 10px #fff, 0 0 20px gold, 0 0 30px gold;
     }
+
     .features {
       display: flex;
       justify-content: center;
@@ -72,45 +98,47 @@
       gap: 20px;
       padding: 40px 20px;
     }
+
     .feature {
       background: #222;
       padding: 20px;
-      border-radius: 10px;
+      border-radius: 15px;
       flex: 1 1 250px;
       max-width: 300px;
       border: 1px solid gold;
-      transition: 0.3s;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
     .feature:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+      transform: translateY(-10px);
+      box-shadow: 0 0 15px gold, 0 0 25px #ffea00, 0 0 35px #fff;
     }
     .feature h3 {
       color: gold;
+      margin-bottom: 10px;
+      text-shadow: 0 0 5px gold;
     }
+
     footer {
       padding: 20px;
       background: #111;
-      border-top: 2px solid gold;
+      border-top: 3px solid gold;
       font-size: 0.9em;
-    }
-    .whatsapp {
-      margin-top: 10px;
     }
     .whatsapp a {
       color: #25d366;
-      text-decoration: none;
       font-weight: bold;
+      text-decoration: none;
+      transition: text-shadow 0.3s;
+    }
+    .whatsapp a:hover {
+      text-shadow: 0 0 5px #25d366, 0 0 10px #25d366, 0 0 15px #25d366;
     }
 
     /* Animaciones */
     @keyframes neon {
-      from {
-        text-shadow: 0 0 5px gold, 0 0 10px gold, 0 0 20px gold, 0 0 40px gold;
-      }
-      to {
-        text-shadow: 0 0 10px gold, 0 0 20px gold, 0 0 30px gold, 0 0 60px gold;
-      }
+      0% { text-shadow: 0 0 5px gold, 0 0 10px gold, 0 0 20px gold, 0 0 30px gold; }
+      50% { text-shadow: 0 0 10px #ffea00, 0 0 20px gold, 0 0 30px #fff, 0 0 40px gold; }
+      100% { text-shadow: 0 0 5px gold, 0 0 10px gold, 0 0 20px gold, 0 0 30px gold; }
     }
     @keyframes pulse {
       0% { transform: scale(1); }
@@ -118,23 +146,22 @@
       100% { transform: scale(1); }
     }
 
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2em;
-      }
-      .feature {
-        max-width: 90%;
-      }
-      header img {
-        max-width: 150px;
-      }
+    /* Responsive */
+    @media (max-width: 768px) {
+      header h1 { font-size: 2.5em; }
+      header img { max-width: 150px; }
     }
+    @media (max-width: 480px) {
+      header h1 { font-size: 2em; }
+      .feature { max-width: 90%; }
+    }
+
   </style>
 </head>
 <body>
 
   <header>
-    <!-- Logo principal con efecto pulse -->
+    <!-- Logo principal con pulso -->
     <img src="https://iili.io/KqmqG5l.md.jpg" alt="Casino Lions Logo">
     <h1>CASINO LIONS</h1>
     <p>Muchísimas opciones de juego para vos 🎰🦁</p>
