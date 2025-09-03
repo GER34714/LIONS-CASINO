@@ -4,6 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Casino Lions</title>
+
+  <!-- Meta Open Graph para vista previa -->
+  <meta property="og:title" content="Casino Lions - Tu casino online">
+  <meta property="og:description" content="Muchísimas opciones de juego para vos 🎰🦁. ¡Juga ahora!">
+  <meta property="og:image" content="https://iili.io/KqmTeRa.md.jpg">
+  <meta property="og:url" content="https://tusitio.com">
+  <meta property="og:type" content="website">
+
+  <!-- Meta para Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Casino Lions - Tu casino online">
+  <meta name="twitter:description" content="Muchísimas opciones de juego para vos 🎰🦁. ¡Juga ahora!">
+  <meta name="twitter:image" content="https://iili.io/KqmTeRa.md.jpg">
+
   <style>
     body {
       margin: 0;
@@ -20,12 +34,14 @@
     header img {
       max-width: 200px;
       margin-bottom: 20px;
+      animation: pulse 2s infinite;
     }
     header h1 {
       font-size: 2.8em;
       color: gold;
       margin: 0;
       text-shadow: 0 0 10px gold, 0 0 20px gold, 0 0 30px gold;
+      animation: neon 1.5s ease-in-out infinite alternate;
     }
     header p {
       font-size: 1.2em;
@@ -86,6 +102,22 @@
       text-decoration: none;
       font-weight: bold;
     }
+
+    /* Animaciones */
+    @keyframes neon {
+      from {
+        text-shadow: 0 0 5px gold, 0 0 10px gold, 0 0 20px gold, 0 0 40px gold;
+      }
+      to {
+        text-shadow: 0 0 10px gold, 0 0 20px gold, 0 0 30px gold, 0 0 60px gold;
+      }
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
     @media (max-width: 600px) {
       header h1 {
         font-size: 2em;
@@ -102,7 +134,7 @@
 <body>
 
   <header>
-    <!-- Logo principal -->
+    <!-- Logo principal con efecto pulse -->
     <img src="https://iili.io/KqmqG5l.md.jpg" alt="Casino Lions Logo">
     <h1>CASINO LIONS</h1>
     <p>Muchísimas opciones de juego para vos 🎰🦁</p>
